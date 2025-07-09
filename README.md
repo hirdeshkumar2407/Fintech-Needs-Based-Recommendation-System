@@ -73,4 +73,18 @@ This project builds a **needs-first recommendation system** for retail banking c
 
 | Target                | Baseline F1 | F1 w/ Engineering | Δ F1  | Precision | Recall |
 |-----------------------|-------------|-------------------|-------|-----------|--------|
-| IncomeInvestment      | 0.689       | 0.729
+| IncomeInvestment      | 0.689       | 0.729             | +0.04 | 0.77      | 0.79   |
+| AccumulationInvestment| 0.680       | 0.818             | +0.14 | 0.70      | 0.72   |
+
+- **Recommendation Coverage**  
+  - IncomeInvestment: 94% (227/241 matched)  
+  - AccumulationInvestment: 75% (357/475 matched)  
+  - 0 risk cap violations (MiFID II compliant)
+
+---
+
+## 🛠️ How to Run
+
+1. **Install dependencies**
+   ```bash
+   pip install pandas numpy scikit-learn matplotlib seaborn
