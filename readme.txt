@@ -1,14 +1,76 @@
-If running on google colab (Recommended):
----------------------------
-1- Load the notebook on Google Colab.
-2- Change the file path to where the Dataset file is saved on your google drive (Dataset2_Needs.xls from Business Case 2).
-3- Run the notebook.
+# Fintech Needs-Based Recommendation System
 
-====================================================
+**Team 15 – Final Project**  
+Mehdi Ghiasipour, Reza Ilzadi Jahromi, Hirdesh Kumar, Suraj Manickam Thirumalai Raja, Christos Partasidis  
+**Date:** 25 June 2025
 
-If running locally:
--------------------
-1- Comment the first code block which is used for running on Colab.
-2- Uncomment the second block which is used for running the code localy.
-3- Change the folder and file path to where the file is saved locally.
-4- Run the notebook.
+---
+
+## 📌 Overview
+
+This project builds a **needs-first recommendation system** for retail banking clients using interpretable machine learning. Instead of starting from financial products, we identify individual client needs — *Income vs Accumulation* — and match suitable products from a catalog using a transparent, explainable model.
+
+---
+
+## 🎯 Objectives
+
+- Detect client investment needs (Income / Accumulation) based on demographic and financial data.
+- Use interpretable decision trees to ensure explainability.
+- Recommend a suitable product that adheres to client-specific risk tolerances.
+
+---
+
+## 🧩 Files
+
+- **`Fintech_Final_Project_Estimating_Needs_V1_3.ipynb`**  
+  Main implementation in Jupyter Notebook. Sections include:
+  - Data ingestion and EDA
+  - Feature engineering
+  - Model training and validation (Decision Trees)
+  - Explainability and Partial Dependence Plots (PDPs)
+  - Next Best Action (NBA) logic for product recommendation
+
+- **`Fintech_Final_Project_Team_15.pdf`**  
+  Accompanying presentation deck summarizing the project:  
+  - WHAT / WHY / HOW / RESULTS  
+  - Visuals and metrics  
+  - Regulatory context and business motivation
+
+---
+
+## 🧠 How It Works
+
+### 1. Data
+
+- **Rows:** 5000 anonymized retail bank clients  
+- **Features:**  
+  - Age, Gender, FamilyMembers, FinancialEducation, RiskPropensity, Income, Wealth  
+- **Targets:**  
+  - Binary flags: `IncomeInvestment`, `AccumulationInvestment`
+
+### 2. Feature Engineering
+
+- `Gender x Age` → life-stage modeling  
+- `log(Income / Wealth)` → liquidity vs capital insight  
+- Log-transform + MinMax scaling for skewed data  
+
+### 3. Model
+
+- Two separate **Decision Trees (depth=5)** for the two need targets  
+- **5-fold cross-validation**  
+- F1 score used as primary evaluation metric
+
+### 4. Recommendation Logic (NBA)
+
+- Predict each client’s needs
+- Filter product catalog by need type
+- Enforce risk suitability: `ProductRisk ≤ ClientRiskPropensity`
+- Recommend the **highest-risk suitable product**
+
+---
+
+## 📊 Results
+
+| Target                | Baseline F1 | F1 w/ Engineering | Δ F1  | Precision | Recall |
+|-----------------------|-------------|-------------------|-------|-----------|--------|
+| IncomeInvestment      | 0.689       | 0.729
