@@ -1,8 +1,20 @@
 # Fintech Needs-Based Recommendation System
 
-**Team 15 – Final Project**  
-Mehdi Ghiasipour, Reza Ilzadi Jahromi, Hirdesh Kumar, Suraj Manickam Thirumalai Raja, Christos Partasidis  
-**Date:** 25 June 2025
+## 🎯 Project Mission & My Role
+As part of the FinTech course at Politecnico di Milano, our team was tasked with a critical, real-world challenge: building a financial recommendation engine that is not only accurate but also transparent, ethical, and fully compliant with regulations like MiFID II.
+As the project owner and a key contributor, I guided our team's strategy to develop a "needs-first" recommendation system. Instead of a black-box model, we engineered an Explainable AI (XAI) pipeline using interpretable decision trees. My focus was on balancing high performance with absolute regulatory compliance and ensuring our final solution was both intelligent and trustworthy.
+This project sits at the intersection of my passions: data science, financial technology, and building systems that create real, responsible value.
+
+---
+
+## 🤝 The Team
+This project's success was a result of a talented and collaborative team effort.
+
+- Mehdi Ghiasipour
+- Reza Ilzadi Jahromi
+- Hirdesh Kumar
+- Suraj Manickam Thirumalai Raja
+- Christos Partasidis
 
 ---
 
